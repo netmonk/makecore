@@ -1,0 +1,12 @@
+KERNEL_SOURCE_URL=http://kernel.org/pub/linux/kernel/v4.x/linux-4.9.13.tar.xz
+GLIBC_SOURCE_URL=http://ftp.gnu.org/gnu/glibc/glibc-2.25.tar.bz2
+BUSYBOX_SOURCE_URL=http://busybox.net/downloads/busybox-1.26.2.tar.bz2
+SYSLINUX_SOURCE_URL=http://kernel.org/pub/linux/utils/boot/syslinux/syslinux-6.03.tar.xz
+STATIC_GET_SOURCE_URL=http://s.minos.io/s
+USE_PREDEFINED_KERNEL_CONFIG=true
+USE_PREDEFINED_BUSYBOX_CONFIG=false
+OVERLAY_TYPE=folder
+USE_LOCAL_SOURCE=true
+USE_BOOT_LOGO=true
+JOB_FACTOR=1
+CFLAGS=-Os -s -fno-stack-protector -fomit-frame-pointer -U_FORTIFY_SOURCE
