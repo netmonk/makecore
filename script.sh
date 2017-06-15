@@ -4,6 +4,7 @@ USECOLOR=1
 InitLib
 
 ## Env initialisation: 
+#plop
 
 home_dir=$(pwd)
 config_file="${home_dir}/config"
