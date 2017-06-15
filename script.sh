@@ -2,7 +2,6 @@
 . ntmkstdlib.sh
 USECOLOR=1
 InitLib
-# test autocommit #3
 
 ## Env initialisation: 
 
