@@ -61,7 +61,7 @@ download_archive_and_extract() {
 
 build_kernel() {
 	echo "toto"
-	cd ${workd_dir}
+	cd ${workd_dir}/kernel
 	rm -rf ${installed_kerne}
 	#parsing config file for options 
 	cflags=$(get_value_from_conf CFLAGS)
