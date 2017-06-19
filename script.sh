@@ -78,7 +78,7 @@ echo "dl: ${dl}"
 
 WriteInfo "Step 2 let's build the kernel" 
 
-[[ "${dl}" -eq  0 ]] && build_kernel || ExitScript  1 "unable to download and install kernel source tree, exiting!!!" 
+[[ $status -eq  0 ]] && build_kernel || ExitScript  1 "unable to download and install kernel source tree, exiting!!!" 
 
 WriteInfo "Step 2 kernel build" 
 
