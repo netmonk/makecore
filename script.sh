@@ -74,7 +74,7 @@ download_archive_and_extract KERNEL_SOURCE_URL kernel
 status=$?
 WriteInfo "Step 1 finished, kernel Sources retrieved and extracted" 
 
-echo "dl: ${dl}"
+echo "dl: ${status}"
 
 WriteInfo "Step 2 let's build the kernel" 
 
