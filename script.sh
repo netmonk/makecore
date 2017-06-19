@@ -70,6 +70,7 @@ Start
 WriteInfo "Step 1 Getting the kernel and extracting"
 download_archive_and_extract KERNEL_SOURCE_URL kernel
 WriteInfo "Step 1 finished, kernel Sources retrieved and extracted" 
+
 WriteInfo "Step 2 let's build the kernel" 
 build_kernel
 WriteInfo "Step 2 kernel build" 
