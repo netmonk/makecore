@@ -15,7 +15,7 @@ num_cores=$(getconf _NPROCESSORS_ONLN)
 
 # Cleaning and ensuring work environment is ready for building
 Start() {
-	WriteInfo "Clean starts:" 
+	WriteInfo "Clean starts" 
 	rm -rf work
 	mkdir work 
 	mkdir -p sources
@@ -74,7 +74,6 @@ download_archive_and_extract KERNEL_SOURCE_URL kernel
 status=$?
 WriteInfo "Step 1 finished, kernel Sources retrieved and extracted" 
 
-echo "dl: ${status}"
 
 WriteInfo "Step 2 let's build the kernel" 
 
