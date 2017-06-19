@@ -61,6 +61,8 @@ download_archive_and_extract() {
 
 build_kernel() {
 	echo "toto"
+	cd ${workd_dir}
+	rm -rf 
 	
 }
 
