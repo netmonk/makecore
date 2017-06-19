@@ -5,12 +5,12 @@ InitLib
 
 ## Env initialisation: 
 
-home_dir=$(pwd)
-config_file="${home_dir}/config"
-sources_dir="$(pwd)/sources"
-work_dir="$(pwd)/work"
-installed_kernel="${home_dir}/work/kernel/kernel_installed"
-num_cores=$(getconf _NPROCESSORS_ONLN)
+declare -r home_dir=$(pwd)
+declare -r config_file="${home_dir}/config"
+declare -r sources_dir="$(pwd)/sources"
+declare -r work_dir="$(pwd)/work"
+declare -r installed_kernel="${home_dir}/work/kernel/kernel_installed"
+declare -r num_cores=$(getconf _NPROCESSORS_ONLN)
 
 
 
