@@ -60,11 +60,9 @@ download_archive_and_extract() {
 }
 
 build_kernel() {
-	echo "toto"
-	echo  "S{work_dir}/kernel"
 	cd "${work_dir}/kernel"
 	rm -rf ${installed_kerneL}
-	mkdir -p  ${installed_kerneL}
+	mkdir -p  "${installed_kerneL}"
 	#parsing config file for options 
 	cflags=$(get_value_from_conf CFLAGS)
 	job_factor=$(get_value_from_conf JOB_FACTOR)
