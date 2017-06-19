@@ -8,6 +8,7 @@ InitLib
 home_dir=$(pwd)
 config_file="${home_dir}/config"
 sources_dir="$(pwd)/sources"
+work_dir="$(pwd)/work"
 installed_kernel="${home_dir}/work/kernel/kernel_installed"
 num_cores=$(getconf _NPROCESSORS_ONLN)
 
