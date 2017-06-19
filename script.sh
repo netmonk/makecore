@@ -60,6 +60,7 @@ download_archive_and_extract() {
 
 build_kernel() {
 	echo "toto"
+	
 }
 
 
@@ -73,6 +74,6 @@ dl=$(download_archive_and_extract KERNEL_SOURCE_URL kernel)
 WriteInfo "Step 1 finished, kernel Sources retrieved and extracted" 
 
 WriteInfo "Step 2 let's build the kernel" 
-build_kernel
+[[ ${dl} == 0  ]] && build_kernel || ExistScript  1 "unable to download and install kernel source tree, exiting!!!" 
 WriteInfo "Step 2 kernel build" 
 
