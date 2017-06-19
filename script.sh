@@ -59,7 +59,6 @@ download_archive_and_extract() {
 }
 
 build_kernel() {
-	
 }
 
 
