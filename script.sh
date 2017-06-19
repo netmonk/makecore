@@ -72,7 +72,7 @@ build_kernel() {
 	cd $(ls -d linux-*)
 	WriteInfo "Running make mrproper"
 	echo $num_job
-	make mrproper -j $
+	make mrproper -j $num_job
 }
 
 
