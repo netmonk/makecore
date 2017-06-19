@@ -62,8 +62,17 @@ download_archive_and_extract() {
 build_kernel() {
 	echo "toto"
 	cd ${workd_dir}
-	rm -rf 
-	
+	rm -rf ${installed_kerne}
+	#parsing config file for options 
+	cflags=$(get_value_from_conf CFLAGS)
+	job_factor=$(get_value_from_conf JOB_FACTOR)
+	num_job=$((num_cores * job_factor))
+	#Starting to work
+	cd ${work_dir}	
+	cd $(ls -d linux-*)
+	WriteInfo "Running make mrproper"
+	echo $num_job
+	make mrproper -j $
 }
 
 
