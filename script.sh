@@ -45,7 +45,7 @@ download_archive_and_extract() {
 	fi 
 	if [ ! "$use_local_source" = "true" ] ; then 
 		WriteInfo "Start Downloading ${target_url}" 
-		wget -c -P sources $target_url
+		wget -c -P sources ${target_url}
 	else 
 		WriteInfo "Using local source ${archive_path}"
 	fi 
