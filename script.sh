@@ -70,7 +70,8 @@ build_kernel() {
 Start
 
 WriteInfo "Step 1 Getting the kernel and extracting"
-dl=$(download_archive_and_extract KERNEL_SOURCE_URL kernel)
+download_archive_and_extract KERNEL_SOURCE_URL kernel
+status=$?
 WriteInfo "Step 1 finished, kernel Sources retrieved and extracted" 
 
 echo "dl: ${dl}"
