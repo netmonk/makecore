@@ -75,7 +75,8 @@ build_kernel() {
 	echo $num_job
 	make mrproper -j $num_job
 	WriteInfo "Installing kernel.config to source directory"
-	cp 	
+	cp ${kernel_config} .config
+	sed -i "s/.*CONFIG_DEFAULT_HOSTNAME.*/CONFIG_DEFAULT_HOSTNAME=\"Citoyx - Corefreq\"/" .config 	
 }
 
 
