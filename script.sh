@@ -86,6 +86,9 @@ build_kernel() {
 	echo "CONFIG_EFI_MIXED=y" >> .config
 	WriteInfo "Building kernel"
 	make CFLAGS="$cflags" bzImage -j $num_jobs
+	cp arch/x86/boot/bzImage ${installed_kernel}/kernel
+	WriteInfo "Generating Kernel headers"
+	make INSTALL_HDR_PATH=${installed_kernel} headers_install -j $num_jobs
 }
 
 
