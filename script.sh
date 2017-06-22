@@ -76,7 +76,16 @@ build_kernel() {
 	make mrproper -j $num_job
 	WriteInfo "Installing kernel.config to source directory"
 	cp ${kernel_config} .config
-	sed -i "s/.*CONFIG_DEFAULT_HOSTNAME.*/CONFIG_DEFAULT_HOSTNAME=\"Citoyx - Corefreq\"/" .config 	
+	sed -i "s/.*CONFIG_DEFAULT_HOSTNAME.*/CONFIG_DEFAULT_HOSTNAME=\"Citoyx - Corefreq\"/" .config
+	sed -i "s/.*CONFIG_OVERLAY_FS.*/CONFIG_OVERLAY_FS=y/" .config
+	sed -i "s/.*\\(CONFIG_KERNEL_.*\\)=y/\\#\\ \\1 is not set/" .config
+	sed -i "s/.*CONFIG_KERNEL_XZ.*/CONFIG_KERNEL_XZ=y/" .config
+	sed -i "s/.*CONFIG_KERNEL_XZ.*/CONFIG_KERNEL_XZ=y/" .config
+	sed -i "s/^CONFIG_DEBUG_KERNEL.*/\\# CONFIG_DEBUG_KERNEL is not set/" .config
+	sed -i "s/.*CONFIG_EFI_STUB.*/CONFIG_EFI_STUB=y/" .config
+	echo "CONFIG_EFI_MIXED=y" >> .config
+	WriteInfo "Building kernel"
+	make CFLAGS="$CFLAGS"bzimage -j $num_jobs
 }
 
 
