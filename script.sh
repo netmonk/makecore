@@ -11,6 +11,7 @@ declare -r sources_dir="$(pwd)/sources"
 declare -r work_dir="$(pwd)/work"
 declare -r installed_kernel="${home_dir}/work/kernel/kernel_installed"
 declare -r num_cores=$(getconf _NPROCESSORS_ONLN)
+declare -r kernel_config="${home_dir}/kernel.config"
 
 
 
@@ -67,11 +68,14 @@ build_kernel() {
 	cflags=$(get_value_from_conf CFLAGS)
 	job_factor=$(get_value_from_conf JOB_FACTOR)
 	num_job=$((num_cores * job_factor))
+	use_user_local_config=$(get_value_from_conf USE_PREDEFINED_KERNEL_CONGIG)
 	#Starting to work
 	cd $(ls -d linux-*)
 	WriteInfo "Running make mrproper"
 	echo $num_job
 	make mrproper -j $num_job
+	WriteInfo "Installing kernel.config to source directory"
+	cp 	
 }
 
 
