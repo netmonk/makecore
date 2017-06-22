@@ -10,6 +10,7 @@ declare -r config_file="${home_dir}/config"
 declare -r sources_dir="$(pwd)/sources"
 declare -r work_dir="$(pwd)/work"
 declare -r installed_kernel="${home_dir}/work/kernel/kernel_installed"
+declare -r installed_glibc="${home_dir}/work/glibc/glibc_installed"
 declare -r num_cores=$(getconf _NPROCESSORS_ONLN)
 declare -r kernel_config="${home_dir}/kernel.config"
 
