@@ -109,3 +109,5 @@ WriteInfo "Step 2 let's build the kernel"
 
 WriteInfo "Step 2 kernel build" 
 
+WriteInfo " Step 3 Getting Glibc" 
+download_archive_and_extract GLIBC_SOURCE glibc
