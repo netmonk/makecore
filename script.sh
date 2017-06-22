@@ -85,7 +85,7 @@ build_kernel() {
 	sed -i "s/.*CONFIG_EFI_STUB.*/CONFIG_EFI_STUB=y/" .config
 	echo "CONFIG_EFI_MIXED=y" >> .config
 	WriteInfo "Building kernel"
-	make CFLAGS="$cflags" bzimage -j $num_jobs
+	make CFLAGS="$cflags" bzImage -j $num_jobs
 }
 
 
