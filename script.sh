@@ -31,6 +31,9 @@ get_value_from_conf(){
 	echo "${value}"
 	return 0
 }
+
+
+
 # Downloading function
 download_archive_and_extract() {
 	[[ ! ${1} ]] &&(WriteWarn "No target provided, unable to download"; return 0 )
@@ -66,9 +69,6 @@ build_kernel() {
 	rm -rf ${installed_kerneL}
 	mkdir -p  "${installed_kernel}"
 	#parsing config file for options 
-	cflags=$(get_value_from_conf CFLAGS)
-	job_factor=$(get_value_from_conf JOB_FACTOR)
-	num_job=$((num_cores * job_factor))
 	use_user_local_config=$(get_value_from_conf USE_PREDEFINED_KERNEL_CONGIG)
 	#Starting to work
 	cd $(ls -d linux-*)
@@ -98,6 +98,13 @@ build_kernel() {
 ############ MAIN ############
 Start
 
+# Global compilation parameter
+
+cflags=$(get_value_from_conf CFLAGS)
+job_factor=$(get_value_from_conf JOB_FACTOR)
+num_job=$((num_cores * job_factor))
+
+
 WriteInfo "Step 1 Getting the kernel and extracting"
 download_archive_and_extract KERNEL_SOURCE_URL kernel
 status=$?
@@ -112,3 +119,5 @@ WriteInfo "Step 2 kernel build"
 
 WriteInfo " Step 3 Getting Glibc" 
 download_archive_and_extract GLIBC_SOURCE glibc
+WriteInfo "Step 3 finished"
+
