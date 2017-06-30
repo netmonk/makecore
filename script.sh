@@ -92,7 +92,10 @@ build_kernel() {
 	make INSTALL_HDR_PATH=${installed_kernel} headers_install -j $num_jobs
 }
 
-
+build_glibc() {
+	WriteInfo "Starting to compile glibc" 
+ 
+}
 
 
 ############ MAIN ############
@@ -119,5 +122,8 @@ WriteInfo "Step 2 kernel build"
 
 WriteInfo " Step 3 Getting Glibc" 
 download_archive_and_extract GLIBC_SOURCE glibc
+status=$?
 WriteInfo "Step 3 finished"
+[[ $status -eq 0 ]]  && build_glibc || ExitScript 1 "unable to download and install glibc, exiting" 
+
 
